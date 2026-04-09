@@ -1,0 +1,36 @@
+<section class="portfolio section" id="portfolio">
+  <span class="section-label">Portfolio</span>
+  <h2 class="section-title">Selected Works</h2>
+
+  <!-- Filter Tags -->
+  <div class="portfolio-filters" id="portfolio-filters">
+    @for (filter of filters; track filter) {
+      <button
+        class="filter-btn"
+        [class.active]="activeFilter === filter"
+        (click)="setFilter(filter)">
+        {{ filter }}
+      </button>
+    }
+  </div>
+
+  <!-- Project Grid -->
+  <div class="portfolio-grid" id="portfolio-grid">
+    @for (project of filteredProjects(); track project.title) {
+      <div class="project-card" [class]="'card-' + project.theme">
+        <div class="card-image">
+          <div class="card-placeholder" [style.background]="project.gradient">
+            <span class="placeholder-icon">{{ project.icon }}</span>
+          </div>
+          <div class="card-overlay">
+            <a href="#" class="card-link">View Project →</a>
+          </div>
+        </div>
+        <div class="card-info">
+          <span class="card-category">{{ project.category }}</span>
+          <h3 class="card-title">{{ project.title }}</h3>
+        </div>
+      </div>
+    }
+  </div>
+</section>

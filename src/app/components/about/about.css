@@ -1,0 +1,129 @@
+/* ===== ABOUT SECTION ===== */
+:host {
+  display: block;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4xl);
+  align-items: start;
+}
+
+/* Left Column */
+.about-description {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--clr-text-dim);
+  margin-bottom: var(--space-lg);
+}
+
+.about-stats {
+  display: flex;
+  gap: var(--space-3xl);
+  margin-top: var(--space-3xl);
+  padding-top: var(--space-2xl);
+  border-top: 1px solid var(--clr-border);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.stat-number {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--clr-red-primary);
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--clr-text-muted);
+  text-transform: uppercase;
+}
+
+/* Right Column - Skills Card */
+.skills-card {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2xl);
+}
+
+.skills-title {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--clr-white);
+  margin-bottom: var(--space-xl);
+}
+
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-md);
+  transition: var(--transition-fast);
+}
+
+.skill-item:hover {
+  background: var(--clr-surface-hover);
+}
+
+.skill-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  background: var(--clr-red-muted);
+  color: var(--clr-red-primary);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.skill-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.skill-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--clr-white);
+}
+
+.skill-desc {
+  font-size: 0.78rem;
+  color: var(--clr-text-muted);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-3xl);
+  }
+
+  .about-stats {
+    gap: var(--space-xl);
+  }
+
+  .stat-number {
+    font-size: 1.8rem;
+  }
+}

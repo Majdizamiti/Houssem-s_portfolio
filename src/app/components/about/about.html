@@ -1,0 +1,52 @@
+<section class="about section" id="about">
+  <div class="about-grid">
+    <!-- Left Column -->
+    <div class="about-info">
+      <span class="section-label">About Me</span>
+      <h2 class="section-title">Transforming ideas into<br>visual experiences</h2>
+      <p class="about-description">
+        I'm Houssem, a passionate graphic designer and visual artist based in Tunisia.
+        With a keen eye for detail and a love for clean, impactful design, I create visuals
+        that tell stories and leave lasting impressions.
+      </p>
+      <p class="about-description">
+        From brand identity systems to digital interfaces and motion graphics,
+        I bring a multidisciplinary approach to every project, ensuring each piece
+        communicates with clarity and purpose.
+      </p>
+
+      <div class="about-stats">
+        <div class="stat">
+          <span class="stat-number">5+</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">50+</span>
+          <span class="stat-label">Projects Completed</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">30+</span>
+          <span class="stat-label">Happy Clients</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column -->
+    <div class="about-skills">
+      <div class="skills-card">
+        <h3 class="skills-title">What I Do</h3>
+        <div class="skills-list">
+          @for (skill of skills; track skill.name) {
+            <div class="skill-item">
+              <div class="skill-icon">{{ skill.icon }}</div>
+              <div class="skill-info">
+                <span class="skill-name">{{ skill.name }}</span>
+                <span class="skill-desc">{{ skill.description }}</span>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

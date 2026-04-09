@@ -1,0 +1,51 @@
+<nav class="navbar" [class.scrolled]="isScrolled" id="main-navbar">
+  <div class="navbar-inner">
+    <!-- Logo -->
+    <a href="#home" class="navbar-logo" id="navbar-logo">
+      <div class="logo-mark">
+      <img src="logo.png" alt="Houssem Graphdesign Logo">
+    </div>
+      <span class="logo-text">Houssem_Graphdesign</span>
+    </a>
+
+    <!-- Navigation Links -->
+    <div class="navbar-nav" id="navbar-nav">
+      @for (item of navItems; track item.id) {
+        <a
+          [href]="item.href"
+          class="nav-link"
+          [class.active]="activeSection === item.id"
+          [id]="'nav-' + item.id"
+          (click)="setActive(item.id)">
+          {{ item.label }}
+        </a>
+      }
+    </div>
+
+    <!-- CTA Button -->
+    <a href="/assets/cv.pdf" target="_blank" class="navbar-cta" id="navbar-download-cv">
+      Download CV
+    </a>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-toggle" (click)="toggleMobileMenu()" [class.open]="isMobileMenuOpen" id="mobile-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" [class.open]="isMobileMenuOpen" id="mobile-menu">
+    @for (item of navItems; track item.id) {
+      <a
+        [href]="item.href"
+        class="mobile-link"
+        [class.active]="activeSection === item.id"
+        (click)="setActive(item.id); toggleMobileMenu()">
+        {{ item.label }}
+      </a>
+    }
+    <a href="/assets/cv.pdf" target="_blank" class="mobile-cta">Download CV</a>
+  </div>
+</nav>
