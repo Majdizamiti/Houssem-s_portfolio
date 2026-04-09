@@ -251,6 +251,9 @@
 
 .line-1 {
   font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+  font-family: Fraunces;
+  font-weight: 300;
+  font-style: italic;
   color: var(--clr-white);
   position: relative;
   animation: fadeInUp 0.8s var(--ease-smooth) both;
@@ -259,16 +262,20 @@
 
 .red-block {
   display: inline-block;
-  font-family: Fraunces;
-  font-style: italic;
-  font-weight: 300;
-  width: 0.6em;
-  height: 0.6em;
-  background: var(--clr-red-primary);
-  margin-right: 0.1em;
-  vertical-align: baseline;
   position: relative;
-  top: 0.05em;
+  color: var(--clr-white);
+  z-index: 1;
+}
+
+.red-block::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -5%;
+  width: 110%;
+  height: 40%;
+  background-color: var(--clr-red-primary);
+  z-index: -1;
 }
 
 .line-2 {
