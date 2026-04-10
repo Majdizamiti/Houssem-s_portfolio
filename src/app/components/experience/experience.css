@@ -1,36 +1,40 @@
-/* ===== EXPERIENCE SECTION ===== */
 :host {
-  display: block;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
   background-color: var(--clr-bg);
   color: var(--clr-white);
-  padding: var(--space-4xl) 0;
-  position: relative;
 }
 
 /* Background watermark effect */
-.experience-section {
+.experience-section.section {
+  width: 100%;
+  min-height: 100vh;
+  max-width: 100%;
+  /* Overrides the .section max-width utility */
+  margin: -100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
   position: relative;
-  /* Restored so child elements attach to this section */
   overflow: hidden;
-  height: 1920px;
-  width: 1080px;
-  /* Prevent the large rotated element from breaking layout */
 }
 
 .watermark-logo {
   position: absolute;
   /* Translated Figma coordinates into relative section offsets to sit under the Education block */
-  right: -20vw;
-  top: 0;
+  right: -10vw;
+  top: 150px;
   width: 845px;
   height: 845px;
-  background-image: url('/logo.png');
+  background-image: url('/logoblack.png');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
 
   /* Apply EXACT User specification */
-  transform: rotate(-13.28deg);
+  transform: rotate(10deg);
   opacity: 10%;
   rotate: -13.28°;
   /* Opacity 100% */
@@ -46,11 +50,14 @@
 
 .experience-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.2fr 1fr;
+  /* Matching About section column ratio */
   gap: var(--space-4xl);
+  align-items: center;
+  /* Matching About section vertical alignment */
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
-  padding: 0 var(--space-xl);
   position: relative;
   z-index: 1;
 }
